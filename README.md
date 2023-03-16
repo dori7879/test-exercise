@@ -1,2 +1,2 @@
 # test-exercise
-test exercise for INTERSPARK
+test exercise
