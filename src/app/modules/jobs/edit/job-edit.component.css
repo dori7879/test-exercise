@@ -1,0 +1,45 @@
+.edit-container {
+  padding: 20px 40px;
+  margin: 0;
+  width: 100%;
+}
+
+.form-container {
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 20px;
+  width: 700px;
+}
+
+label {
+  margin-right: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-item {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.date {
+  width: 160px;
+}
+
+.buttons-container {
+  display: flex;
+  margin-top: 20px;
+}
+
+.button {
+  width: 130px;
+  margin-right: 20px;
+}
+
+.red {
+  color: red;
+}

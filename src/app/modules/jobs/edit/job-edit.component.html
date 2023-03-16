@@ -1,0 +1,89 @@
+<div class="edit-container">
+    <h2>{{jobId ? 'Edit Job' : 'Create Job'}}</h2>
+
+  <div class="form-container">
+    <form [formGroup]="jobForm">
+      <div class="form-item">
+        <label>Job title<span class="red">*</span></label>
+        <input
+          formControlName="job_title"
+          placeholder="Enter job title"
+        />
+      </div>
+      <div class="form-item">
+        <label>Job number<span class="red">*</span></label>
+        <input
+          formControlName="job_number"
+          placeholder="Enter job number"
+        />
+      </div>
+      <div class="form-item">
+        <label>Start Date<span class="red">*</span></label>
+        <div class="input-group date">
+          <input
+            class="form-control"
+            placeholder="dd/mm/yyyy"
+            name="d2"
+            formControlName="job_start_date"
+            ngbDatepicker
+            #d2="ngbDatepicker"
+          />
+          <button class="btn btn-outline-secondary bi bi-calendar3" (click)="d2.toggle()" type="button"></button>
+        </div>
+      </div>
+      <div class="form-item">
+        <label>Close Date<span class="red">*</span></label>
+        <div class="input-group date">
+          <input
+            class="form-control"
+            placeholder="dd/mm/yyyy"
+            name="d2"
+            formControlName="job_close_date"
+            ngbDatepicker
+            #d3="ngbDatepicker"
+          />
+          <button class="btn btn-outline-secondary bi bi-calendar3" (click)="d3.toggle()" type="button"></button>
+        </div>
+      </div>
+      <div class="form-item">
+        <label>Experience required</label>
+        <input
+          type="checkbox"
+          formControlName="experience_required"
+        />
+      </div>
+      <div class="form-item">
+        <label>Number of openings</label>
+        <input
+          type="number"
+          formControlName="number_of_openings"
+        />
+      </div>
+      <div class="form-item">
+        <label>Notes</label>
+        <textarea
+          formControlName="job_notes"
+          rows="4"
+          cols="40"
+        ></textarea>
+      </div>
+    </form>
+  </div>
+  <div class="buttons-container">
+    <button
+      type="button"
+      class="btn btn-primary button"
+      (click)="save()"
+      [disabled]="jobForm.invalid"
+    >
+      {{jobId ? 'Save' : 'Create'}}
+    </button>
+    <button
+      type="button"
+      class="btn btn-outline-secondary button"
+      (click)="back()"
+    >
+      Back
+    </button>
+  </div>
+</div>

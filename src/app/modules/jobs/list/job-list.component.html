@@ -1,0 +1,47 @@
+<div class="list-container">
+  <div class="top-bar">
+    <h2>Job List</h2>
+    <button
+      type="button"
+      class="btn btn-outline-primary"
+      (click)="createJob()"
+    >
+      Create Job
+    </button>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Job title</th>
+      <th scope="col">Job Number</th>
+      <th scope="col">Start Date</th>
+      <th scope="col">Close Date</th>
+      <th scope="col">Experience</th>
+      <th scope="col">Number of openings</th>
+      <th scope="col">Note</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let job of jobList; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>
+        <a [routerLink]="['' + job.id]">
+          {{ job.job_title }}
+        </a>
+      </td>
+      <td>{{ job.job_number }}</td>
+      <td>{{ job.job_start_date }}</td>
+      <td>{{ job.job_close_date }}</td>
+      <td>{{ job.experience_required ? 'Required' : 'Not Required' }}</td>
+      <td>{{ job.number_of_openings }}</td>
+      <td>{{ job.job_notes }}</td>
+      <td>
+        <button class="btn btn-outline-danger" (click)="deleteJob(job.id)">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
